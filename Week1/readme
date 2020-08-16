@@ -1,0 +1,87 @@
+1.C Program to Add Two Complex Numbers by Passing Structure to a Function
+
+#include<stdio.h>
+struct complex
+{
+	int real,img;
+};
+int main()
+{
+	struct complex a,b,c;
+	printf("Enter a and b where a + ib is the first complex number.\n");
+   	scanf("%d%d", &a.real, &a.img);
+   	printf("Enter c and d where c + id is the second complex number.\n");
+   	scanf("%d%d", &b.real, &b.img);
+
+   	c.real = a.real + b.real;
+   	c.img = a.img + b.img;
+
+   	printf("Sum of the complex numbers: (%d) + (%di)\n", c.real, c.img);
+
+   	return 0;
+}
+
+2.C Program to Store Information of Students Using Structure
+#include <stdio.h>
+struct student {
+    char name[50];
+    int roll;
+    float marks;
+} s;
+
+int main() {
+    printf("Enter information:\n");
+    printf("Enter name: ");
+    fgets(s.name, sizeof(s.name), stdin);
+
+    printf("Enter roll number: "); 
+    scanf("%d", &s.roll);
+    printf("Enter marks: ");
+    scanf("%f", &s.marks);
+
+    printf("Displaying Information:\n");
+    printf("Name: ");
+    printf("%s", s.name);
+    printf("Roll number: %d\n", s.roll);
+    printf("Marks: %.1f\n", s.marks);
+
+    return 0;
+}
+
+ 3.Write a C program to node with data and link using self referential structures
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node*link;
+};
+int main()
+{
+	struct node*s;
+	s=(struct node*)malloc(sizeof(struct node));
+	s->data=100;
+	s->link=NULL;
+	printf("data=%d",s->data);
+}
+
+
+4.Write a C program to node with data and two link using self referential structures
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node*prev;
+	struct node*next;
+};
+int main()
+{
+	struct node*s;
+	s=(struct node*)malloc(sizeof(struct node));
+	s->data=100;
+	s->prev=NULL;
+	s->next=NULL;
+	printf("data=%d",s->data);
+}
+
